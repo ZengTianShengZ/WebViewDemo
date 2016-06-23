@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,6 +36,27 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
         Log.i("activity","............BaseActivity..............");
     }
+    protected int getMenuRes(){
+        return -1;
+    };
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if(getMenuRes()<0)return true;
+        getMenuInflater().inflate(getMenuRes(), menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                //don't use finish() and use onBackPressed() will be a good practice , trust me !
+                onBackPressed();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void checkPresenterIsNull(){
         if(mPresenter == null){

@@ -1,15 +1,19 @@
 package wb.zts.com.webviewdemo.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.webkit.WebView;
 
 import butterknife.Bind;
 import wb.zts.com.webviewdemo.R;
 import wb.zts.com.webviewdemo.WebViewApp;
 import wb.zts.com.webviewdemo.presenter.MainPresenter;
+import wb.zts.com.webviewdemo.presenter.WbDialogPresenter;
 import wb.zts.com.webviewdemo.presenter.i_view.IWebView;
+import wb.zts.com.webviewdemo.util.AndroidUtils;
 import wb.zts.com.webviewdemo.util.SnackbarUtil;
 
 public class MainActivity extends BaseSwipeRefreshActivity<MainPresenter> implements IWebView {
@@ -32,7 +36,7 @@ public class MainActivity extends BaseSwipeRefreshActivity<MainPresenter> implem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setToolbarTitle("WebViewDemo",true);
+        setToolbarTitle("WebViewDemo-",true);
 
         mPresenter.setUpWebView(main_webview);
         mPresenter.loadUrl(main_webview,URL_str);
@@ -71,6 +75,27 @@ public class MainActivity extends BaseSwipeRefreshActivity<MainPresenter> implem
 
     /************************  activity  ******************************/
 
+    @Override
+    protected int getMenuRes() {
+        return R.menu.menu_main;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_about_demo:
+                int accentColor = AndroidUtils.getAccentColor(getApplicationContext());
+                WbDialogPresenter.create("关于demo", "about_demo.html", accentColor)
+                        .show(getSupportFragmentManager(), "about_demo");
+                break;
+            case R.id.action_about_me:
+
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onBackPressed() {
