@@ -28,6 +28,7 @@ public abstract class BaseSwipeRefreshActivity<P extends BasePresenter> extends 
     }
 
     private void initSwipeRefreshLayout(){
+
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary, R.color.colorPrimaryDark, R.color.colorAccent);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

@@ -21,37 +21,34 @@
         }
     </style>
     <script type="text/javascript">
-        function showAboutGank() {
-            Android.showAboutGank();
+        function showSnackbar() {
+            Android.showSnackbar();
         }
-        function showAboutVersion() {
-            Android.showAboutVersion();
+        function showDialog() {
+            Android.showDialog();
         }
     </script>
 </head>
 <body>
 
 <p>
-    GankDaily,每日提供技术干货的App。
+    整个demo 用的最多的是 webview ，如果看项目的源码，可以看到很多数据都是通过webview加载的，添加一些脚本可以屏蔽加载网页的一些不想要的显示，包括你现在看到的这个 dialog , 也是通过加载本地的 html 片段，在 assets 文件夹下面。  webview加载的 html 片段咱们还可以利用 脚本 和 android native 做一些交互tou't'h
 </p>
 <div style="font-size:14px;color:#999d9c">
-    本App中所有数据均来自 <a onClick="showAboutGank()" href="#">干货集中营</a> 。
+    与应用交互，弹出个Snackbar或Toast <a onClick="showSnackbar()" href="#">点击我 </a> 。
 </div>
 <p>
-    作者&nbsp;&nbsp;咕咚<br>
-    <a href='https://maoruibin.github.io'>个人主页</a>&nbsp;&nbsp;
-    <a href='http://weibo.com/u/1874136301'>微博</a>&nbsp;&nbsp;
-    <a href='http://www.zhihu.com/people/maoruibin'>知乎</a>&nbsp;&nbsp;
-    <a href='https://github.com/maoruibin'>Github</a>&nbsp;&nbsp;
-    <br>
+<div style="font-size:14px;color:#999d9c">
+    点击还可以再弹出一个dialog <a onClick="showDialog()" href="#">点击我 </a> 。
+</div>
 </p>
 <p>
-    项目开源地址：<a href="https://github.com/maoruibin/GankDaily">https://github.com/maoruibin/GankDaily</a>
+    项目开源地址：<a href="https://github.com/ZengTianShengZ/WebViewDemo">https://github.com/maoruibin/GankDaily</a>
 </p>
 <p>
-    报告错误或提出需求：<a href="https://github.com/maoruibin/GankDaily/issues">https://github.com/maoruibin/GankDaily/issues</a>
+    报告错误或提出需求：<a href="https://github.com/ZengTianShengZ/WebViewDemo/issues">https://github.com/maoruibin/GankDaily/issues</a>
 </p>
 <p>
-    感谢&nbsp;&nbsp;<a href="http://weibo.com/daimajia">@代码家</a>&nbsp;&nbsp;<a href="http://weibo.com/drak11t">@drakeet</a>
+    感谢&nbsp;&nbsp;<a href="https://github.com/maoruibin">@咕咚</a>&nbsp;&nbsp;
 </p>
 </body>

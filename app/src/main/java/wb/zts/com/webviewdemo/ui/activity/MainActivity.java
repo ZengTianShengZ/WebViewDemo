@@ -85,12 +85,16 @@ public class MainActivity extends BaseSwipeRefreshActivity<MainPresenter> implem
         int id = item.getItemId();
         switch (id){
             case R.id.action_about_demo:
-                int accentColor = AndroidUtils.getAccentColor(getApplicationContext());
+                int accentColor = getApplicationContext().getResources().getColor(R.color.colorOverall);
+
                 WbDialogPresenter.create("关于demo", "about_demo.html", accentColor)
                         .show(getSupportFragmentManager(), "about_demo");
                 break;
             case R.id.action_about_me:
+                int accentColorxx = getApplicationContext().getResources().getColor(R.color.colorAccent);
 
+                WbDialogPresenter.create("关于demo", "about_me.html", accentColorxx)
+                        .show(getSupportFragmentManager(), "about_me");
                 break;
 
         }

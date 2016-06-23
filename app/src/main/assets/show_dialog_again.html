@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style type="text/css">
+        * {
+        word-wrap: break-word;
+        }
+        {style-placeholder}
+        a {
+        color: #{link-color};
+        }
+        a:active {
+        color: #{link-color-active};
+        }
+        ol {
+        list-style-position: inside;
+        padding-left: 0;
+        padding-right: 0;
+        }
+        li:not(:first-child) {
+        padding-top: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        function showDialog() {
+            Android.showDialog();
+        }
+
+    </script>
+</head>
+<body>
+
+<p>
+    还是一个dialog
+</p>
+<div style="font-size:14px;color:#999d9c">
+    点击还可以再弹出一个dialog <a onClick="showDialog()" href="#">点击我 </a> 。
+</div>
+
+</body>

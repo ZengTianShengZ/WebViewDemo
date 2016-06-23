@@ -60,19 +60,19 @@ public class WebViewDialog extends DialogFragment implements IWbDialogView {
 
         }
 
-        /** Show a dialog about app **/
-        @JavascriptInterface
-        public void showAbout(){
-         }
-
         /** Show a dialog about gank site **/
         @JavascriptInterface
-        public void showAboutGank(){
+        public void showSnackbar(){
 
             SnackbarUtil.ThemeSnackbar(WebViewApp.AContext,mWebView,"showAboutGank");
          }
         @JavascriptInterface
-        public void showAboutVersion(){
+        public void showDialog(){
+            int accentColor = mContext.getApplicationContext().getResources().getColor(R.color.colorPrimary);
+
+            WbDialogPresenter.create("关于demo", "show_dialog_again.html", accentColor)
+                    .show(getFragmentManager(), "dialog_again");
+
          }
     }
 }

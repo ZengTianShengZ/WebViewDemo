@@ -33,7 +33,7 @@ public class WbDialogPresenter extends BasePresenter<IWbDialogView> {
     private static final String EXTRA_HTML_FILE_NAME = "HTML_FILE_NAME";
     private static final String EXTRA_ACCENT_COLOR = "ACCENT_COLOR";
 
-    private static final String KEY_UTF_8 = "UTF_8";
+    private static final String KEY_UTF_8 = "UTF-8";
 
     /**
      * create a custom dialog use web view load layout by html file
@@ -110,20 +110,27 @@ public class WbDialogPresenter extends BasePresenter<IWbDialogView> {
     private void loadData(WebView webView,String htmlFileName,int accentColor){
         try {
             StringBuilder buf = new StringBuilder();
+            Log.i("loadData","..............loadData.........1..");
             InputStream json = mContext.getAssets().open(htmlFileName);
+            Log.i("loadData","..............loadData.........2..");
             BufferedReader in = new BufferedReader(new InputStreamReader(json,KEY_UTF_8));
+            Log.i("loadData","..............loadData.........3..");
             String str;
             while ((str = in.readLine()) != null)
                 buf.append(str);
             in.close();
-
+            Log.i("loadData","..............loadData..........."+buf.toString());
             String formatLodString = buf.toString()
                     .replace("{style-placeholder}", "body { background-color: #ffffff; color: #000; }")
                     .replace("{link-color}", colorToHex(shiftColor(accentColor, true)))
                     .replace("{link-color-active}", colorToHex(accentColor));
-            webView.loadDataWithBaseURL(null, buf.toString(), "text/html", KEY_UTF_8, null);
+
+            Log.i("loadData","..............formatLodString..........."+formatLodString);
+
+            webView.loadDataWithBaseURL(null,formatLodString, "text/html", KEY_UTF_8, null);
         } catch (Throwable e) {
-            webView.loadData("<h1>Unable to load</h1><p>" + e.getLocalizedMessage()+"html加载出错"+ "</p>", "text/html", KEY_UTF_8);
+            Log.i("loadData","..............Throwable..........."+e);
+            webView.loadData("<h1>Unable to load</h1><p>" + e.getLocalizedMessage()+ "</p>", "text/html", KEY_UTF_8);
         }
     }
 

@@ -66,9 +66,9 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
 
     final private void initToolBar() {
-        if(mToolbar == null){
+        /*if(mToolbar == null){
             throw new NullPointerException("please add a Toolbar in your layout.");
-        }
+        }*/
         setSupportActionBar(mToolbar);
     }
 
