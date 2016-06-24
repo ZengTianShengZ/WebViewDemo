@@ -6,7 +6,11 @@ import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +46,20 @@ public class ZhihuNewsRecycleAdapter extends BaseRecycleViewAdapter {
         question_title.setText(item.getTitle()+"");
 
         daily_title.setText(item.getDate()+"");
+
+        Picasso.with(mContext)
+                .load(item.getImages()[0])
+                .into((ImageView) holder.getView(R.id.zhihu_news_img), new Callback() {
+                    @Override
+                    public void onSuccess() {
+
+                    }
+                    @Override
+                    public void onError() {
+
+                    }
+                });
+
 
         holder.mConvertView.setOnClickListener(new View.OnClickListener() {
             @Override

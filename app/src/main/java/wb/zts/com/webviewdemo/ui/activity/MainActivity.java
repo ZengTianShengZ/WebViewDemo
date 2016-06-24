@@ -84,6 +84,11 @@ public class MainActivity extends BaseSwipeRefreshActivity<MainPresenter> implem
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id){
+
+            case R.id.about_zhihu:
+                Intent intent = new Intent(MainActivity.this, ZhiHuActivity.class);
+                startActivity(intent);
+                break;
             case R.id.action_about_demo:
                 int accentColor = getApplicationContext().getResources().getColor(R.color.colorOverall);
 

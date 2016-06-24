@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.ZhiHuActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +26,7 @@
 
 
         <activity android:name=".ui.activity.ZhihuStoryActivity"/>
+        <activity android:name=".ui.activity.ZhiHuActivity"/>
     </application>
 
 </manifest>
