@@ -1,5 +1,6 @@
 package wb.zts.com.webviewdemo.ui.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected abstract int getLayout();
     protected abstract void initPresenter();
 
+    protected Context mContext;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         initPresenter();
         checkPresenterIsNull();
         initToolBar();
-
+        mContext = getApplication();
         Log.i("activity","............BaseActivity..............");
     }
     protected int getMenuRes(){

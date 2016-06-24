@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.TypedValue;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import wb.zts.com.webviewdemo.R;
 
 /**
@@ -21,5 +25,9 @@ public class AndroidUtils {
         theme.resolveAttribute(R.attr.colorPrimary, typedValue, true);
         return typedValue.data;
     }
-
+    public static final class Dates {
+        public static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd", Locale.US);
+        @SuppressWarnings("deprecation")
+        public static final Date birthday = new java.util.Date(113, 4, 19); // May 19th, 2013
+    }
 }

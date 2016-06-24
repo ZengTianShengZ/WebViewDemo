@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".MainActivity">
+
+    <item android:id="@+id/action_no_css"
+          android:title="@string/no_css"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/action_have_css"
+          android:title="@string/have_css"
+          android:orderInCategory="100"
+          android:visible="true"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/action_night"
+        android:title="@string/night"
+        android:orderInCategory="100"
+        android:visible="true"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_no_night"
+        android:title="@string/no_night"
+        android:orderInCategory="100"
+        android:visible="true"
+        app:showAsAction="never"/>
+</menu>

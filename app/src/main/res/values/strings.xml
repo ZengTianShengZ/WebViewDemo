@@ -4,4 +4,8 @@
     <string name="about_demo">关于demo</string>
     <string name="about_me">关于我</string>
 
+    <string name="no_css">没CSS渲染</string>
+    <string name="have_css">有CSS渲染</string>
+    <string name="night">夜间模式</string>
+    <string name="no_night">白天模式</string>
 </resources>
